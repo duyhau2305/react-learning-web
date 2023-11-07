@@ -1,13 +1,14 @@
-
 import { Provider } from "react-redux";
-// import { Next13ProgressBar } from "next13-progressbar";
-/* Instruments */
-import { store } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+
+import { persistor, store } from "./redux/store";
 
 export const Providers = (props: React.PropsWithChildren) => {
   return (
     <Provider store={store}>
-      {props.children}
+      <PersistGate loading={null} persistor={persistor}>
+        {props.children}
+      </PersistGate>
     </Provider>
   );
 };

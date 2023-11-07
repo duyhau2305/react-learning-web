@@ -1,6 +1,9 @@
 import { Store } from "redux";
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import createSagaMiddleware, { Task } from "redux-saga";
+import { persistStore, persistReducer } from 'redux-persist'
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+ 
 import { fork, all } from "redux-saga/effects";
 import userReducer from "./user/reducers";
 import userSagas from "../../api/userSagas";
@@ -14,6 +17,14 @@ function* rootSaga() {
   yield all([fork(userSagas)]);
 }
 
+
+const persistConfig = {
+  key: 'root',
+  storage,
+}
+ 
+const persistedReducer = persistReducer(persistConfig, rootReducer)
+
 const sagaMiddleware = createSagaMiddleware();
 const middlewares = [sagaMiddleware, logger];
 const store = configureStore({
@@ -22,6 +33,8 @@ const store = configureStore({
     getDefaultMiddleware().concat(middlewares),
   devTools: process.env.NODE_ENV !== "production",
 });
+
+let persistor = persistStore(store)
 
 export interface SagaStore extends Store {
   sagaTask?: Task;
@@ -37,4 +50,4 @@ const appDispatch = (action: any | unknown): any => store.dispatch(action);
 export type RootStore = typeof store;
 export type RootState = ReturnType<typeof store.getState>;
 
-export { store, appState, appDispatch };
+export { store, persistor, appState, appDispatch };
