@@ -12,7 +12,7 @@ const logger = createLogger({
     nextState: () => "#A47104",
     error: () => "#ff0005",
   },
-  predicate: () => !(process?.env?.NODE_ENV === "production"),
+  predicate: () => process.env.NODE_ENV === "production",
 });
 
 export { logger };

@@ -6,7 +6,7 @@ import { persistor, store } from "./redux/store";
 export const Providers = (props: React.PropsWithChildren) => {
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={<div className="">Loading...</div>} persistor={persistor}>
         {props.children}
       </PersistGate>
     </Provider>
