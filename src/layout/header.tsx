@@ -5,9 +5,31 @@ import { GiRss } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { menus } from "../configs/menu";
+import { useEffect } from "react";
 
 export default function Header() {
+
+  const handleScroll = () => {
+    const bottomHeader = document.querySelector(".header-section");
+    const y = window.scrollY > 200;
+    console.log('hehehee', window.scrollY)
+  
+    if (bottomHeader) {
+      if (y && !bottomHeader.classList.contains("header-fixed")) {
+        bottomHeader.classList.add("header-fixed");
+      } else if (!y && bottomHeader.classList.contains("header-fixed")) {
+        bottomHeader.classList.remove("header-fixed");
+      }
+    }
+  };
+
+
+  useEffect(() =>{
+    window.addEventListener('scroll', handleScroll)
+    return window.removeEventListener('scroll', handleScroll)
+  })
   return (
+    <>
     <header className="header header-section" id="header-main">
       <div className="top-header">
         <div className="top-header-container text-grey flex items-center justify-between px-6.25 border-b border-b-primary">
@@ -63,8 +85,8 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="bottom-header sticky bg-[#fdfdfd73]">
-        <div className="bottom-header-container px-6.25 py-5 flex items-center justify-between">
+      <div className="bottom-header">
+        <div className="bottom-header-container px-6.25 py-5 flex items-center justify-between backdrop-blur-[20px]">
           <div className="logo-left max-h-[52px]">
             <Link className="inline-block w-full h-full" to="/">
               <img src="/assets/image/logo.png" alt="logo" />
@@ -92,13 +114,16 @@ export default function Header() {
                       {e.title}
                     </Link>
                     {subMenu && (
-                        <ul className="menu-list-item-of-children absolute">
-                            {subMenu.map((v, j) =>(
-                                <li className="menu-item-of-children text-black hover:bg-primary hover:text-white" key={`m${j}`}>
-                                    <Link to={v.link}>{v.title}</Link>
-                                </li>
-                            ))}
-                        </ul>
+                      <ul className="menu-list-item-of-children absolute">
+                        {subMenu.map((v, j) => (
+                          <li
+                            className="menu-item-of-children text-black hover:bg-primary hover:text-white"
+                            key={`m${j}`}
+                          >
+                            <Link to={v.link}>{v.title}</Link>
+                          </li>
+                        ))}
+                      </ul>
                     )}
                   </li>
                 );
@@ -128,5 +153,7 @@ export default function Header() {
         </div>
       </div>
     </header>
+  
+    </>
   );
 }
