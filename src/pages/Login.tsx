@@ -34,7 +34,7 @@ export default function Login() {
           </span>
         </p>
         <div className="flex flex-col items-center gap-5">
-          <div className="w-9 h-9 rounded-full primary-color flex items-center justify-center">
+          <div className="w-9 h-9 rounded-full primary-bg flex items-center justify-center">
             <p className="text-white">OR</p>
           </div>
           <p className="font-bold text-xl">Login With Social Media</p>

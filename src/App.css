@@ -62,8 +62,12 @@
   color: #fff;
 }
 
-.primary-color {
+.primary-bg {
   background: #f16126;
+}
+
+.primary-color {
+  color: #f16126;
 }
 
 .social-icon {
