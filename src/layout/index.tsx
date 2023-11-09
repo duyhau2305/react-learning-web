@@ -3,10 +3,10 @@ import Header from "./header";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-full">
+    <>
       <Header />
-      <main>{children}</main>
+      <main className="mx-auto w-full p-0 container">{children}</main>
       <Footer />
-    </div>
+    </>
   );
 }
