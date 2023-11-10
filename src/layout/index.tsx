@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       <main className="mx-auto w-full p-0 bg-secondary">
-        <BannerSection />
+        {/* <BannerSection /> */}
         {children}
       </main>
       <Footer />
