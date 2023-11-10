@@ -5,6 +5,7 @@ import Courses from '../pages/Courses'
 import Layout from '../layout'
 import Login from '../pages/Login'
 import SignUp from '../pages/SignUp'
+import App from '../App'
 
 export default function Routers() {
   return (
