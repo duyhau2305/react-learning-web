@@ -5,7 +5,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
-      <main className="mx-auto w-full p-0 container">{children}</main>
+      <main className="w-full p-0 bg-[#fff9f1]">{children}</main>
       <Footer />
     </>
   );

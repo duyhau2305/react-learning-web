@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Login() {
   return (
     <div className="container mx-auto">
-      <div className="max-w-xl mx-auto p-14 px-20 flex flex-col gap-y-5 shadow rounded">
+      <div className="max-w-xl mx-auto p-14 px-20 flex flex-col gap-y-5 shadow rounded bg-white">
         <p className="text-3xl font-bold text-center">Login</p>
         <div className="flex flex-col gap-y-4">
           <input
@@ -30,7 +30,7 @@ export default function Login() {
         <p className="text-center">
           Don't Have Any Account?
           <span>
-            <Link to="/signUp"> Sign Up</Link>
+            <Link to="/sign-up"> Sign Up</Link>
           </span>
         </p>
         <div className="flex flex-col items-center gap-5">

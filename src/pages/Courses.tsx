@@ -2,6 +2,7 @@ import ListCourses from "../components/ListCourses"
 
 const courses = [
   {
+    idCourse: 1,
     nameCourse: "Fundamentals of Adobe XD Theory Learn New",
     courseImage: '/assets/image/course-image.jpg',
     price: 30,
@@ -13,6 +14,7 @@ const courses = [
     authorImage: '/assets/image/ava-author.jpg'
   },
   {
+    idCourse: 2,
     nameCourse: "Fundamentals of Adobe XD Theory Learn New",
     courseImage: '/assets/image/course-image.jpg',
     price: 30,
@@ -24,6 +26,7 @@ const courses = [
     authorImage: '/assets/image/ava-author.jpg'
   },
   {
+    idCourse: 3,
     nameCourse: "Fundamentals of Adobe XD Theory Learn New",
     courseImage: '/assets/image/course-image.jpg',
     price: 30,
@@ -35,6 +38,7 @@ const courses = [
     authorImage: '/assets/image/ava-author.jpg'
   },
   {
+    idCourse: 4,
     nameCourse: "Fundamentals of Adobe XD Theory Learn New",
     courseImage: '/assets/image/course-image.jpg',
     price: 30,
@@ -46,6 +50,7 @@ const courses = [
     authorImage: '/assets/image/ava-author.jpg'
   },
   {
+    idCourse: 5,
     nameCourse: "Fundamentals of Adobe XD Theory Learn New",
     courseImage: '/assets/image/course-image.jpg',
     price: 30,
@@ -57,6 +62,7 @@ const courses = [
     authorImage: '/assets/image/ava-author.jpg'
   },
   {
+    idCourse: 6,
     nameCourse: "Fundamentals of Adobe XD Theory Learn New",
     courseImage: '/assets/image/course-image.jpg',
     price: 30,
@@ -71,9 +77,8 @@ const courses = [
 
 export default function Courses() {
   return (
-    <div className='container w-2/3 mx-auto'>
+    <div className='container max-w-[1340px] mx-auto px-4'>
       <ListCourses courses={courses}/>
     </div>
-    
   )
 }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function SignUp() {
   return (
     <div className="container mx-auto">
-      <div className="max-w-xl mx-auto p-14 px-20 flex flex-col gap-y-5 shadow rounded">
+      <div className="max-w-xl mx-auto p-14 px-20 flex flex-col gap-y-5 shadow rounded bg-white">
         <p className="text-3xl font-bold text-center">Register Now</p>
         <div className="flex flex-col gap-y-4">
           <input
