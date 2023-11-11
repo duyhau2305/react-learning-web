@@ -5,6 +5,7 @@ import {
   FaStar,
   FaStarHalf,
 } from "react-icons/fa";
+import { animated, useSpring } from "react-spring";
 
 import { useState } from "react";
 
@@ -170,6 +171,14 @@ export default function CourseDetail() {
     }
     return stars;
   };
+
+  const animation = useSpring({
+    height: expandedIndex != -1 ? "auto" : 0,
+    opacity: expandedIndex != -1 ? 1 : 0,
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+  });
+
   return (
     <div className="w-full">
       <div
@@ -242,21 +251,34 @@ export default function CourseDetail() {
             </div>
             <div className="flex flex-col gap-2">
               <p className="text-2xl font-bold">Course Content</p>
-              {course.content.map((c: any, i: any) => (
-                <div key={i}>
-                  <button
-                    className="w-full bg-[#26c976] p-4 flex justify-between"
-                    onClick={() => handleClick(i)}
-                  >
-                    <p className="text-lg text-white font-bold">
-                      {i + 1}.{c.name}
-                    </p>
-                    <p className="text-lg text-white font-medium">
-                      {c.lessons} lesson, {c.totalTime}
-                    </p>
-                  </button>
-                  {expandedIndex === i && (
-                    <div className="duration-500">
+              <div
+                className="flex flex-col gap-1 accordion"
+                id="accordionExample"
+              >
+                {course.content.map((c: any, i: any) => (
+                  <div key={i} className="accordion-item">
+                    <button
+                      className={`w-full bg-[#26c976] p-4 flex justify-between ${
+                        expandedIndex === i ? "" : "collapsed"
+                      }`}
+                      aria-expanded={expandedIndex === i}
+                      onClick={() => handleClick(i)}
+                    >
+                      <p className="text-lg text-white font-bold">
+                        {i + 1}.{c.name}
+                      </p>
+                      <p className="text-lg text-white font-medium">
+                        {c.lessons} lesson, {c.totalTime}
+                      </p>
+                    </button>
+                    {/* {expandedIndex === i && ( */}
+                    <div
+                      aria-labelledby="accordion01"
+                      data-bs-parent="#accordionExample"
+                      className={`accordion-collapse collapse ${
+                        expandedIndex === i ? "show" : ""
+                      }`}
+                    >
                       {c.videos.map((vid: any, idx: any) => (
                         <div
                           className={`w-full p-4 flex justify-between items-center ${
@@ -270,9 +292,10 @@ export default function CourseDetail() {
                         </div>
                       ))}
                     </div>
-                  )}
-                </div>
-              ))}
+                    {/* )} */}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

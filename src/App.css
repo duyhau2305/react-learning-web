@@ -77,3 +77,7 @@ input, input:focus, input:focus-visible, input:focus-within{
   align-items: center;
   justify-content: center;
 }
+
+.collapse:not(.show) {
+  display: none;
+}
