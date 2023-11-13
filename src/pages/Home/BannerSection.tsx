@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 export default function BannerSection() {
   return (
     <section className="banner-section pt-[215px]">
-      <div className="container-section relative mx-auto w-full flex items-center px-6.25 z-10">
-        <div className="data-left">
+      <div className="container-section relative mx-auto w-full flex flex-col xl:flex-row items-center px-6.25 z-10">
+        <div className="data-left w-full max-w-[800px]">
           <div className="data-content">
             <h6 className="subtitle text-uppercase font-semibold text-primary">
               Online education
@@ -46,13 +46,13 @@ export default function BannerSection() {
             </div>
           </div>
         </div>
-        <div className="data-right w-[58%]">
+        <div className="data-right w-full flex justify-center xl:blocl xl:w-[58%]">
             <div className="data-content-right">
                 <img src="/assets/image/student.png" alt="student"/>
             </div>
         </div>
       </div>
-      <div className="all-shapes"></div>
+      <div className="all-shapes hidden xl:block"></div>
     </section>
   );
 }
