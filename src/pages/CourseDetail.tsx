@@ -9,7 +9,7 @@ import {
   FaStar,
   FaStarHalf,
   FaTwitter,
-  FaVimeoV
+  FaVimeoV,
 } from "react-icons/fa";
 import { GrCertificate, GrLanguage } from "react-icons/gr";
 import { IoAlarmOutline, IoTimeOutline } from "react-icons/io5";
@@ -196,7 +196,7 @@ export default function CourseDetail() {
           backgroundImage: `url('/public/assets/image/banner-detail.jpg')`,
         }}
       >
-        <div className="container max-w-[1340px] mx-auto px-4 flex justify-between">
+        <div className="container max-w-[1340px] mx-auto px-4 flex justify-between flex-col-reverse">
           <div className="flex flex-col w-2/5 gap-4 pt-14">
             <div className="flex gap-2">
               <div className="bg-[#26c976] py-1 px-4 rounded text-white font-bold flex items-center">
@@ -234,8 +234,8 @@ export default function CourseDetail() {
         </div>
       </div>
       <div className="bg-secondary py-28">
-        <div className="container max-w-[1340px] mx-auto px-4 flex gap-7">
-          <div className="flex flex-col w-3/5 gap-8">
+        <div className="container max-w-[1340px] mx-auto px-4 flex gap-4">
+          <div className="flex flex-col w-2/3 gap-8 px-2">
             <div className="flex flex-col gap-2">
               <p className="font-bold text-3xl text-black">Course Overview</p>
               <p className="text-lg">{course.overview}</p>
@@ -296,7 +296,9 @@ export default function CourseDetail() {
               <img src={course.authorImage} className="w-[150px] h-[150px]" />
               <div className="flex-1 flex flex-col gap-3">
                 <div>
-                  <p className="text-xl font-bold text-black">{course.author}</p>
+                  <p className="text-xl font-bold text-black">
+                    {course.author}
+                  </p>
                   <p className="text-lg">{course.authorJob}</p>
                 </div>
                 <p>{course.authorDescrip}</p>
@@ -308,21 +310,25 @@ export default function CourseDetail() {
                 {course.listComments.length} Comment
               </div>
               <div className="py-5 px-7 flex flex-col gap-5">
-                {course.listComments.map((c,i) => <div className="flex gap-5">
-                  <img src={c.authorAvatar}/>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="font-bold text-xl text-black">{c.author}</p>
-                        <p className="text-base">{c.date} at {c.time}</p>
+                {course.listComments.map((c, i) => (
+                  <div className="flex gap-5">
+                    <img src={c.authorAvatar} />
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-bold text-xl text-black">
+                            {c.author}
+                          </p>
+                          <p className="text-base">
+                            {c.date} at {c.time}
+                          </p>
+                        </div>
+                        <div className="flex">{renderStars(c.rating)}</div>
                       </div>
-                      <div className="flex">
-                        {renderStars(c.rating)}
-                      </div>
+                      <p className="text-lg">{c.contentComment}</p>
                     </div>
-                    <p className="text-lg">{c.contentComment}</p>
                   </div>
-                </div>)}
+                ))}
               </div>
             </div>
             <div className="shadow bg-white">
@@ -330,102 +336,134 @@ export default function CourseDetail() {
                 Leave a Comment
               </div>
               <form className="py-5 px-7 flex-wrap flex justify-between gap-y-5">
-                <input type="text" className="input bg-[#ecf0f3] w-[48%]" placeholder="Your Name *" />
-                <input type="text" className="input bg-[#ecf0f3] w-[48%]" placeholder="Your Email *" />
-                <input type="text" className="input bg-[#ecf0f3] w-full" placeholder="Write a Subject" />
-                <textarea className="input bg-[#ecf0f3] w-full" rows="7" placeholder="Your Message"></textarea>
+                <input
+                  type="text"
+                  className="input bg-[#ecf0f3] w-[48%]"
+                  placeholder="Your Name *"
+                />
+                <input
+                  type="text"
+                  className="input bg-[#ecf0f3] w-[48%]"
+                  placeholder="Your Email *"
+                />
+                <input
+                  type="text"
+                  className="input bg-[#ecf0f3] w-full"
+                  placeholder="Write a Subject"
+                />
+                <textarea
+                  className="input bg-[#ecf0f3] w-full"
+                  rows="7"
+                  placeholder="Your Message"
+                ></textarea>
                 <button className="button">SEND COMMENT</button>
               </form>
             </div>
           </div>
-          <div className="flex flex-col flex-1 gap-8">
+          <div className="flex flex-col flex-1 gap-8 px-2">
             <div className="bg-white gap-8">
               <div className="flex primary-bg p-4 justify-between">
                 <p className="text-2xl text-white font-bold">${course.price}</p>
                 <div className="flex items-center gap-1">
-                  <IoTimeOutline className="text-white" size={20}/>
+                  <IoTimeOutline className="text-white" size={20} />
                   <p className="text-lg text-white">Limited time offer</p>
                 </div>
               </div>
               <div className="p-2.5">
                 <div className="flex px-4 py-3 items-center justify-between">
                   <div className="flex items-center gap-1">
-                    <IoAlarmOutline size={20}/>
+                    <IoAlarmOutline size={20} />
                     <p className="text-lg">Course Level</p>
                   </div>
                   <p className="text-lg">{course.level}</p>
                 </div>
                 <div className="flex px-4 py-3 items-center justify-between bg-[#f9f9f9]">
                   <div className="flex items-center gap-1">
-                    <FaBook size={18}/>
+                    <FaBook size={18} />
                     <p className="text-lg">Course Duration</p>
                   </div>
                   <p className="text-lg">{course.duration}</p>
                 </div>
                 <div className="flex px-4 py-3 items-center justify-between">
                   <div className="flex items-center gap-1">
-                    <BsFillBarChartFill size={18}/>
+                    <BsFillBarChartFill size={18} />
                     <p className="text-lg">Online Class</p>
                   </div>
                   <p className="text-lg">{course.class}</p>
                 </div>
                 <div className="flex px-4 py-3 items-center justify-between bg-[#f9f9f9]">
                   <div className="flex items-center gap-1">
-                    <FaPhotoVideo size={18}/>
+                    <FaPhotoVideo size={18} />
                     <p className="text-lg">Lessons</p>
                   </div>
                   <p className="text-lg">{course.lessonAmount}x</p>
                 </div>
                 <div className="flex px-4 py-3 items-center justify-between">
                   <div className="flex items-center gap-1">
-                    <BiAbacus size={20}/>
+                    <BiAbacus size={20} />
                     <p className="text-lg">Quizzes</p>
                   </div>
                   <p className="text-lg">{course.quizzes}</p>
                 </div>
                 <div className="flex px-4 py-3 items-center justify-between bg-[#f9f9f9]">
                   <div className="flex items-center gap-1">
-                    <BsHourglassSplit size={18}/>
+                    <BsHourglassSplit size={18} />
                     <p className="text-lg">Pass parcentages</p>
                   </div>
                   <p className="text-lg">{course.level}</p>
                 </div>
                 <div className="flex px-4 py-3 items-center justify-between">
                   <div className="flex items-center gap-1">
-                    <GrCertificate size={18}/>
+                    <GrCertificate size={18} />
                     <p className="text-lg">Certificate</p>
                   </div>
                   <p className="text-lg">{course.certificate}</p>
                 </div>
                 <div className="flex px-4 py-3 items-center justify-between bg-[#f9f9f9]">
                   <div className="flex items-center gap-1">
-                    <GrLanguage size={18}/>
+                    <GrLanguage size={18} />
                     <p className="text-lg">Language</p>
                   </div>
                   <p className="text-lg">{course.language}</p>
                 </div>
                 <div className="px-4 py-3">
-                  <p className="font-bold text-lg text-black mb-1">Secure Payment:</p>
-                  <img src="/public/assets/image/payments.jpg"/>
-                  <p className="font-bold text-lg text-black mb-1 mt-3">Share This Course:</p>
+                  <p className="font-bold text-lg text-black mb-1">
+                    Secure Payment:
+                  </p>
+                  <img src="/public/assets/image/payments.jpg" />
+                  <p className="font-bold text-lg text-black mb-1 mt-3">
+                    Share This Course:
+                  </p>
                   <div className="flex gap-2">
                     <div className="flex items-center justify-center rounded-full w-10 h-10 bg-[#55acee]">
-                      <FaTwitter className="text-white"/>
+                      <FaTwitter className="text-white" />
                     </div>
                     <div className="flex items-center justify-center rounded-full w-10 h-10 bg-[#3b5998]">
-                      <FaVimeoV className="text-white"/>
+                      <FaVimeoV className="text-white" />
                     </div>
                     <div className="flex items-center justify-center rounded-full w-10 h-10 bg-[#ffdf40]">
-                      <FaRss className="text-white"/>
+                      <FaRss className="text-white" />
                     </div>
                   </div>
-                  <button className="button bg-[#26c976] mt-5">Enrolled Now</button>
+                  <button className="button bg-[#26c976] mt-5">
+                    Enrolled Now
+                  </button>
                 </div>
               </div>
             </div>
             <div className="bg-white gap-8">
               <div className="primary-bg p-4 p-2.5 px-7">
-                <p className="text-2xl text-white font-bold">Course Categories</p>
+                <p className="text-2xl text-white font-bold">
+                  Course Categories
+                </p>
+              </div>
+              <div className="p-3">
+                {categories.map((c: any, i: any) => (
+                  <div className={`flex px-3 py-4 justify-between items-center ${i%2!==0 && 'bg-[#f9f9f9]'}`} key={i}>
+                    <p className="text-lg">{c.nameCategory}</p>
+                    <p className="text-lg">{c.amount}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
