@@ -1,3 +1,12 @@
+@font-face {
+  font-family:'Barlow' ;
+  src: url('./styles/fonts/Barlow-Regular.ttf');
+}
+
+*, body, #root{
+  font-family: 'Barlow';
+}
+
 input, input:focus, input:focus-visible, input:focus-within{
   outline: none;
 }

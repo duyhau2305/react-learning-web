@@ -89,5 +89,10 @@ export const menus = [
     title: "Contact",
     link: "/contact",
     subMenu: []
+  },
+  {
+    title: "Forum",
+    link: "/forum",
+    subMenu: []
   }
 ];
