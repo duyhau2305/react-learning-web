@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function BannerSection() {
   return (
-    <section className="banner-section pt-[215px]">
+    <section className="banner-section pt-[215px] overflow-hidden w-full">
       <div className="container-section relative mx-auto w-full flex flex-col xl:flex-row items-center px-6.25 z-10">
-        <div className="data-left w-full max-w-[800px]">
+        <div className="data-left w-full max-w-[800px] xl:max-w-[526px]">
           <div className="data-content">
             <h6 className="subtitle text-uppercase font-semibold text-primary">
               Online education

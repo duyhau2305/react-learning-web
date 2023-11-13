@@ -17,9 +17,9 @@ export default function Header() {
 
     if (bottomHeader) {
       if (y && !bottomHeader.classList.contains("header-fixed")) {
-        bottomHeader.classList.add("header-fixed");
+        bottomHeader.classList.add("header-fixed", "fadeInUp");
       } else if (!y && bottomHeader.classList.contains("header-fixed")) {
-        bottomHeader.classList.remove("header-fixed");
+        bottomHeader.classList.remove("header-fixed", "fadeInUp");
       }
     }
   };
@@ -99,7 +99,7 @@ export default function Header() {
           </div>
         </div>
         <div className="bottom-header">
-          <div className="bottom-header-container realtive px-6.25  flex items-center justify-center backdrop-blur-[20px]">
+          <div className="bottom-header-container realtive px-6.25  flex items-center justify-center backdrop-blur-[20px] bg-blur">
             <div className="relative flex items-center justify-between py-5 w-full sm:max-w-[540px] md:max-w-[720px] plg:max-w-full">
               <div className="logo-left max-h-[52px]">
                 <Link className="inline-block w-full h-full" to="/">
@@ -126,7 +126,7 @@ export default function Header() {
                       >
                         <Link
                           to={e.link}
-                          className={`font-semibold capitalize text-base py-3.75 px-5.5 realtive ${
+                          className={`capitalize text-base py-3.75 px-5.5 realtive font-bold text-black ${
                             subMenu
                               ? "before:absolute before:top-1/2 before:-translate-y-1/2 after:absolute before:h-[10px] before:w-0.5 before:right-1 after:bottom-1/2 after:w-[10px] after:h-0.5 after:translate-y-1/2 after:bg-black before:bg-black after:right-0"
                               : ""
