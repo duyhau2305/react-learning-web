@@ -17,6 +17,7 @@ import { IoAlarmOutline, IoTimeOutline } from "react-icons/io5";
 import { BiAbacus } from "react-icons/bi";
 import SocialMedia from "../components/SocialMedia";
 import { useState } from "react";
+import { useCollapse } from "react-collapsed";
 
 const course = {
   idCourse: 6,
@@ -167,7 +168,7 @@ const categories = [
 ];
 
 export default function CourseDetail() {
-  const [expandedIndex, setExpandedIndex] = useState(-1);
+  const [expandedIndex, setExpandedIndex] = useState(0);
 
   const handleClick = (nextIndex: any) => {
     if (expandedIndex === nextIndex) {
@@ -187,7 +188,12 @@ export default function CourseDetail() {
     }
     return stars;
   };
-
+  // const [isExpanded, setExpanded] = useState(false);
+  // const { getCollapseProps, getToggleProps } = useCollapse({
+  //   isExpanded,
+  //   defaultExpanded: true,
+  //   collapsedHeight: 0,
+  // })
   return (
     <div className="w-full">
       <div
@@ -267,12 +273,12 @@ export default function CourseDetail() {
                       className="w-full bg-[#26c976] p-4 flex justify-between"
                       onClick={() => handleClick(i)}
                     >
-                      <p className="text-lg text-white font-bold">
+                      <span className="text-lg text-white font-bold">
                         {i + 1}.{c.name}
-                      </p>
-                      <p className="text-lg text-white font-medium">
+                      </span>
+                      <span className="text-lg text-white font-medium">
                         {c.lessons} lesson, {c.totalTime}
-                      </p>
+                      </span>
                     </button>
                     <div className={expandedIndex === i ? "" : "hidden"}>
                       {c.videos.map((vid: any, idx: any) => (
