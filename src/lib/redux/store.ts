@@ -1,11 +1,19 @@
 import { Store } from "redux";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
-import { REHYDRATE } from "redux-persist/lib/constants";
 import createSagaMiddleware, { Task } from "redux-saga";
-import { persistStore, persistReducer } from "redux-persist";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 
-import { fork, all, take } from "redux-saga/effects";
+import { fork, all } from "redux-saga/effects";
 import userReducer from "./user/reducers";
 import userSagas from "../../api/userSagas";
 import { logger } from "./middleware";
@@ -30,10 +38,13 @@ const middlewares = [sagaMiddleware, logger];
 const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(middlewares),
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(middlewares),
   devTools: process.env.NODE_ENV !== "production",
 });
-
 
 export interface SagaStore extends Store {
   sagaTask?: Task;

@@ -1,6 +1,5 @@
-import { FaFacebookF, FaInstagram, FaLinkedin, FaPinterestP, FaTwitter } from "react-icons/fa";
-
 import { Link } from "react-router-dom";
+import SocialMedia from "../components/SocialMedia";
 
 export default function Login() {
   return (
@@ -38,23 +37,7 @@ export default function Login() {
             <p className="text-white">OR</p>
           </div>
           <p className="font-bold text-xl">Login With Social Media</p>
-          <div className="flex gap-2">
-            <div className="social-icon bg-[#3b5998]">
-              <FaFacebookF style={{ color: "#fff" }} />
-            </div>
-            <div className="social-icon bg-[#55acee]">
-              <FaTwitter style={{ color: "#fff" }} />
-            </div>
-            <div className="social-icon bg-[#007bb5]">
-              <FaLinkedin style={{ color: "#fff" }} />
-            </div>
-            <div className="social-icon bg-[#e4405f]">
-              <FaInstagram style={{ color: "#fff" }} />
-            </div>
-            <div className="social-icon bg-[#bd081c]">
-              <FaPinterestP style={{ color: "#fff" }} />
-            </div>
-          </div>
+          <SocialMedia />
         </div>
       </div>
     </div>
