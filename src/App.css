@@ -1,3 +1,12 @@
+@font-face {
+  font-family:Barlow;
+  src: url('./styles/fonts/Barlow-Regular.ttf');
+}
+
+*, body, #root{
+  font-family: Barlow, sans-serif;
+}
+
 input, input:focus, input:focus-visible, input:focus-within{
   outline: none;
 }
@@ -77,3 +86,26 @@ input, input:focus, input:focus-visible, input:focus-within{
   align-items: center;
   justify-content: center;
 }
+/* 
+.accordion-collapse{
+  transition: all 0.3s ease;
+} */
+
+/* .collapse{
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+.collapse:not(.show) {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: height 13s ease;
+}
+
+.collapse.show{
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+  transition: height 0.3s ease-in;
+} */
