@@ -11,6 +11,7 @@ export default {
         "primary": "#F16126",
         "secondary": "#fff9f1",
         "black": "#101115",
+        "blur": "#fdfdfd73"
       },
       padding:{
         "6.25": "25px",
