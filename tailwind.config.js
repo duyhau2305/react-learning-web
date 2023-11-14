@@ -39,6 +39,10 @@ export default {
         '2xl': '1536px',
         // => @media (min-width: 1536px) { ... }
         
+      },
+      boxShadow:{
+        "custom": "0 0 10px hsla(0,0%,53%,.1)",
+        "orange": "0 5px 10px rgba(241,97,38,.5)"
       }
     },
   },
