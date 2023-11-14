@@ -16,7 +16,6 @@ import { IoAlarmOutline, IoTimeOutline } from "react-icons/io5";
 
 import { BiAbacus } from "react-icons/bi";
 import SocialMedia from "../components/SocialMedia";
-import { useCollapse } from "react-collapsed";
 import { useState } from "react";
 
 const course = {
@@ -188,12 +187,7 @@ export default function CourseDetail() {
     }
     return stars;
   };
-  // const [isExpanded, setExpanded] = useState(false);
-  // const { getCollapseProps, getToggleProps } = useCollapse({
-  //   isExpanded,
-  //   defaultExpanded: true,
-  //   collapsedHeight: 0,
-  // })
+  
   return (
     <div className="w-full">
       <div
