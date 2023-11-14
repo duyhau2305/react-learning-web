@@ -16,8 +16,8 @@ import { IoAlarmOutline, IoTimeOutline } from "react-icons/io5";
 
 import { BiAbacus } from "react-icons/bi";
 import SocialMedia from "../components/SocialMedia";
-import { useState } from "react";
 import { useCollapse } from "react-collapsed";
+import { useState } from "react";
 
 const course = {
   idCourse: 6,
@@ -197,13 +197,13 @@ export default function CourseDetail() {
   return (
     <div className="w-full">
       <div
-        className="h-[600px] pt-[200px]"
+        className="h-[730px] md:h-[600px] pt-[150px] md:pt-[200px]"
         style={{
           backgroundImage: `url('/public/assets/image/banner-detail.jpg')`,
         }}
       >
-        <div className="container max-w-[1340px] mx-auto px-4 flex justify-between flex-col-reverse">
-          <div className="flex flex-col w-2/5 gap-4 pt-14">
+        <div className="container max-w-[1340px] mx-auto px-4 flex justify-between flex-col-reverse md:flex-row">
+          <div className="flex flex-col md:w-2/5 gap-4 pt-14">
             <div className="flex gap-2">
               <div className="bg-[#26c976] py-1 px-4 rounded text-white font-bold flex items-center">
                 <span className="bg-[#ffffff80] w-[6px] h-[6px] rounded-full inline-block mr-1"></span>
@@ -213,7 +213,7 @@ export default function CourseDetail() {
                 {course.saleOff}% Off
               </div>
             </div>
-            <p className="text-4xl font-bold text-black">{course.nameCourse}</p>
+            <p className="text-2xl md:text-4xl font-bold text-black">{course.nameCourse}</p>
             <p className="text-[18px] text-[#555]">{course.descrip}</p>
             <div className="flex gap-4">
               <div className="flex items-center gap-2">
@@ -231,7 +231,7 @@ export default function CourseDetail() {
               </div>
             </div>
           </div>
-          <div className="w-3/5 p-3 bg-white rounded-md relative">
+          <div className="md:w-3/5 p-3 bg-white rounded-md relative">
             <img src={course.courseImage} />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-white rounded-full flex items-center justify-center">
               <FaPlay className="primary-color" size={26} />
@@ -239,9 +239,9 @@ export default function CourseDetail() {
           </div>
         </div>
       </div>
-      <div className="bg-secondary py-28">
-        <div className="container max-w-[1340px] mx-auto px-4 flex gap-4">
-          <div className="flex flex-col w-2/3 gap-8 px-2">
+      <div className="bg-secondary py-16 md:py-28">
+        <div className="container max-w-[1340px] mx-auto px-4 flex flex-col md:flex-row gap-8 md:gap-4">
+          <div className="flex flex-col md:w-2/3 gap-8 px-2">
             <div className="flex flex-col gap-2">
               <p className="font-bold text-3xl text-black">Course Overview</p>
               <p className="text-lg">{course.overview}</p>
@@ -298,9 +298,9 @@ export default function CourseDetail() {
                 ))}
               </div>
             </div>
-            <div className="flex px-6 py-7 bg-white shadow gap-7">
+            <div className="flex items-center flex-col md:flex-row px-6 py-7 bg-white shadow gap-7">
               <img src={course.authorImage} className="w-[150px] h-[150px]" />
-              <div className="flex-1 flex flex-col gap-3">
+              <div className="flex-1 flex flex-col items-center gap-3">
                 <div>
                   <p className="text-xl font-bold text-black">
                     {course.author}
@@ -312,15 +312,15 @@ export default function CourseDetail() {
               </div>
             </div>
             <div className="shadow bg-white">
-              <div className="py-5 px-7 text-xl font-bold text-black border-b mb-7">
+              <div className="py-5 px-7 text-xl font-bold text-black border-b md:mb-7">
                 {course.listComments.length} Comment
               </div>
               <div className="py-5 px-7 flex flex-col gap-5">
                 {course.listComments.map((c, i) => (
-                  <div className="flex gap-5">
-                    <img src={c.authorAvatar} />
+                  <div className="md:flex gap-5">
+                    <img src={c.authorAvatar} className="w-14 h-14 md:w-24 md:h-24"/>
                     <div className="flex-1">
-                      <div className="flex items-center justify-between">
+                      <div className="md:flex items-center justify-between">
                         <div>
                           <p className="font-bold text-xl text-black">
                             {c.author}
