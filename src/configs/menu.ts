@@ -38,8 +38,8 @@ export const menus = [
     link: "/courses",
     subMenu: [
       {
-        title: "Course",
-        link: "/course",
+        title: "Courses",
+        link: "/courses",
       },
       {
         title: "Course Detail",
