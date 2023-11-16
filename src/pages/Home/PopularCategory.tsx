@@ -44,7 +44,7 @@ export default function PopularCategory() {
         </h2>
       </div>
       <div className="row-data">
-        <div className="wrapper-row-data grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 xl:max-w-[1140px] 2xl:max-w-[1320px] mx-auto">
+        <div className="wrapper-row-data grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pxl:grid-cols-6 pxl:max-w-[1140px] 2xl:max-w-[1320px] mx-auto">
           {dataList.map((e, i) => (
             <div
               className="w-full hover:text-primary text-center rounded-[4px] py-10 px-[30px] transition-all duration-300 shadow-custom hover:-translate-y-[10px]"

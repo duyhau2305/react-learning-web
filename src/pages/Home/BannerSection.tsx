@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function BannerSection() {
   return (
     <section className="banner-section pt-[215px] overflow-hidden w-full relative ">
-      <div className="container-section max-w-[1320px] relative mx-auto w-full flex flex-col xl:flex-row items-center px-6.25 z-10">
+      <div className="container-section max-w-[1320px] relative mx-auto w-full flex flex-col pxl:flex-row items-center px-6.25 z-10">
         <div className="data-left w-full max-w-[800px] xl:max-w-[526px]">
           <div className="data-content">
             <h6 className="subtitle text-uppercase font-semibold text-primary">
@@ -31,22 +31,22 @@ export default function BannerSection() {
               <p className="text-grey">Most Popular : </p>
               <ul className="flex flex-wrap">
                 <li>
-                  <Link to="#" className="px-[10px] ">
+                  <Link to="#" className="px-[10px] text-black underline font-medium ">
                     Figma
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="px-[10px] ">
+                  <Link to="#" className="px-[10px] text-black underline font-medium ">
                     Adobe XD
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="px-[10px] ">
+                  <Link to="#" className="px-[10px] text-black underline font-medium ">
                     illustration
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="px-[10px] ">
+                  <Link to="#" className="px-[10px] text-black underline font-medium ">
                     Photoshop
                   </Link>
                 </li>
@@ -54,7 +54,7 @@ export default function BannerSection() {
             </div>
           </div>
         </div>
-        <div className="data-right w-full flex justify-center xl:blocl xl:w-[58%]">
+        <div className="data-right w-full flex justify-center mt-[30px] pxl:mt-0 xl:block xl:w-[58%]">
           <div className="data-content-right">
             <img src="/assets/image/student.png" alt="student" />
           </div>
