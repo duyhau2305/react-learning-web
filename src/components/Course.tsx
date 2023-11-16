@@ -1,22 +1,12 @@
-import { FaPhotoVideo, FaStar, FaStarHalf } from "react-icons/fa";
-
-import { BsFillBarChartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { FaPhotoVideo } from "react-icons/fa";
 import { RiShareBoxFill } from "react-icons/ri";
+import { BsFillBarChartFill } from "react-icons/bs";
+
+import { renderStars } from "../common/utils";
 
 export default function Course({ item }: { item: any }) {
-  const renderStars = (rating: any) => {
-    let stars = [];
-    let fullStars = Math.floor(rating);
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(<FaStar key={i} className="primary-color" />);
-    }
-    if (rating - fullStars >= 0.5) {
-      stars.push(<FaStarHalf className="primary-color" />);
-    }
 
-    return stars;
-  };
   return (
     <div className="p-4 bg-white border">
       <img src={item.courseImage} className="w-full" />

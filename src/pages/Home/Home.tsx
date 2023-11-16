@@ -2,6 +2,8 @@ import About from "./About";
 import BannerSection from "./BannerSection";
 import BrandComponent from "./Brand";
 import FeatureCourses from "./FeatureCourses";
+import Feedback from "./Feedback";
+import Instructors from "./Instructors";
 import PopularCategory from "./PopularCategory";
 
 export default function HomePage() {
@@ -12,6 +14,8 @@ export default function HomePage() {
       <PopularCategory/>
       <FeatureCourses/>
       <About/>
+      <Instructors/>
+      <Feedback/>
       {/* <BannerSection />
       <BannerSection />
       <BannerSection />
