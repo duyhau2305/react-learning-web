@@ -9,7 +9,10 @@ export default function Course({ item }: { item: any }) {
 
   return (
     <div className="p-4 bg-white border">
-      <img src={item.courseImage} className="w-full" />
+      <div className="overflow-hidden">
+        <img src={item.courseImage} className="w-full max-w-full hover:scale-105 duration-300"/>
+      </div>
+      
       <div className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] primary-bg rounded-full flex items-center justify-center text-white font-bold text-xl ml-auto mr-[20px] -mt-[30px] relative">
         ${item.price}
       </div>

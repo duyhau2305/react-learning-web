@@ -1,5 +1,7 @@
-import { InitialUserState, UserAction, UserState } from "./types";
 import * as actions from './actions'
+
+import { InitialUserState, UserAction, UserState } from "./types";
+
 import { RootState } from "../store";
 
 /* All state of user */
@@ -14,6 +16,7 @@ export const isSignOut = (state: RootState) => state.user.isSignOut
 export const requestResetPasword = (state: RootState) => state.user.requestResetPasword
 export const resetPasswordSuccess = (state: RootState) => state.user.resetPasswordSuccess
 export const resetPaswordFailed = (state: RootState) => state.user.resetPaswordFailed
+export const loginSuccess = (state: RootState) => state.user.loginSuccess
 
 
 function userReducer(state: UserState = InitialUserState, action: UserAction){

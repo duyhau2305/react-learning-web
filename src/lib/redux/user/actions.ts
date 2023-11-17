@@ -11,6 +11,7 @@ export const RESET_PASSWORD_REQUEST='REQUEST_PASSWORD_REQUEST'
 export const RESET_PASSWORD_SUCCESS='REQUEST_PASSWORD_SUCCESS'
 export const RESET_PASSWORD_FAILED='REQUEST_PASSWRORD_FAILED'
 
+
 export const CLEANUP = "USER_CLEANUP";
 
 export function signInRequest(request: any): UserAction{
@@ -27,6 +28,7 @@ export function signInSuccess(data: any): UserAction{
         type: SIGN_IN_SUCCESS,
         payload: {
             isSigning: false,
+            loginSuccess: true,
             dataUser: data
         }
     }
