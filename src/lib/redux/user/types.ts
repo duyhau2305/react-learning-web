@@ -9,7 +9,8 @@ export type UserState = {
   isResetPassword?: boolean;
   resetPaswordFailed?: any;
   resetPasswordSuccess?: any;
-  messageError?: any
+  messageError?: any;
+  loginSuccess?:boolean;
 };
 
 export type UserAction = {
@@ -28,5 +29,6 @@ export const InitialUserState: UserState = {
   isResetPassword: false,
   resetPaswordFailed: null,
   resetPasswordSuccess: null,
-  messageError: null
+  messageError: null,
+  loginSuccess: false
 };

@@ -1,3 +1,5 @@
+import * as UserReducers from "../lib/redux/user/reducers";
+
 import { AiFillPhone, AiOutlineUser } from "react-icons/ai";
 import { BsMessenger, BsSkype, BsTwitter, BsVimeo } from "react-icons/bs";
 import { useEffect, useState } from "react";
@@ -8,11 +10,14 @@ import { IoInformationOutline } from "react-icons/io5";
 import { IoIosPeople } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { menus } from "../configs/menu";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Header() {
-  const isLogin = true;
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const [showTopMenu, setShowTopMenu] = useState(false);
+  const loginSuccess = useSelector(UserReducers.loginSuccess);
   const handleScroll = () => {
     const bottomHeader = document.querySelector(".header-section");
     const y = window.scrollY > 200;
@@ -152,47 +157,57 @@ export default function Header() {
                     );
                   })}
                 </ul>
-                {isLogin ? <Link to={"/profile"}><img src="/public/assets/image/ava-author.jpg"/></Link>:<div className="wrapper-button-account flex items-center text-base">
-                  <button
-                    className="login hidden md:flex gap-1 items-center uppercase rounded-tl-[2px] rounded-bl-[2px] text-primary p-[10px] md:p-3.75 bg-white"
-                    type="button"
-                    name="btnLogin"
-                    data-test="login-test"
-                  >
-                    <AiOutlineUser size={16} />
-                    <span className="">Login</span>
-                  </button>
-                  <button
-                    className="signup hidden md:flex gap-1 items-center uppercase rounded-tr-[2px] rounded-br-[2px] bg-primary text-white p-[10px] md:p-3.75"
-                    type="button"
-                    name="btnSignup"
-                    data-test="signup-test"
-                  >
-                    <IoIosPeople size={16} />
-                    <span className="">Sign Up</span>
-                  </button>
-                  <div className="flex items-center plg:hidden">
-                    <div
-                      className={`header-bar relative ml-[30px] w-[25px] h-5 ${
-                        showMenu ? "active" : ""
-                      }`}
-                      role="button"
-                      onClick={() => setShowMenu((prevState) => !prevState)}
+                {loginSuccess ? (
+                  <Link to={"/profile"}>
+                    <img
+                      src="/public/assets/image/ava-author.jpg"
+                      className="rounded-full"
+                    />
+                  </Link>
+                ) : (
+                  <div className="wrapper-button-account flex items-center text-base">
+                    <button
+                      className="login hidden md:flex gap-1 items-center uppercase rounded-tl-[2px] rounded-bl-[2px] text-primary p-[10px] md:p-3.75 bg-white"
+                      type="button"
+                      name="btnLogin"
+                      data-test="login-test"
+                      onClick={() => navigate('/login')}
                     >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <div
-                      className="info-show-top-header ml-5 bg-primary w-5 h-5 flex justify-center items-center rounded-sm"
-                      role="button"
-                      onClick={() => setShowTopMenu((prev) => !prev)}
+                      <AiOutlineUser size={16} />
+                      <span className="">Login</span>
+                    </button>
+                    <button
+                      className="signup hidden md:flex gap-1 items-center uppercase rounded-tr-[2px] rounded-br-[2px] bg-primary text-white p-[10px] md:p-3.75"
+                      type="button"
+                      name="btnSignup"
+                      data-test="signup-test"
+                      onClick={() => navigate('/sign-up')}
                     >
-                      <IoInformationOutline className="text-white" />
+                      <IoIosPeople size={16} />
+                      <span className="">Sign Up</span>
+                    </button>
+                    <div className="flex items-center plg:hidden">
+                      <div
+                        className={`header-bar relative ml-[30px] w-[25px] h-5 ${
+                          showMenu ? "active" : ""
+                        }`}
+                        role="button"
+                        onClick={() => setShowMenu((prevState) => !prevState)}
+                      >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                      <div
+                        className="info-show-top-header ml-5 bg-primary w-5 h-5 flex justify-center items-center rounded-sm"
+                        role="button"
+                        onClick={() => setShowTopMenu((prev) => !prev)}
+                      >
+                        <IoInformationOutline className="text-white" />
+                      </div>
                     </div>
                   </div>
-                </div>}
-                
+                )}
               </nav>
             </div>
           </div>
