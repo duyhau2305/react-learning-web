@@ -6,6 +6,7 @@ import HomePage from '../pages/Home/Home'
 import Layout from '../layout'
 import Login from '../pages/Login'
 import Profile from '../pages/Profile'
+import ResetPassword from '../pages/ResetPassword'
 import SignUp from '../pages/SignUp'
 
 export default function Routers() {
@@ -19,6 +20,7 @@ export default function Routers() {
             <Route path='/courses' element={<Courses />}/>
             <Route path='/course-detail/:id' element={<CourseDetail />}/>
             <Route path='/profile' element={<Profile />}/>
+            <Route path='/reset-password' element={<ResetPassword />}/>
           </Routes>
         </Layout>
       </BrowserRouter>

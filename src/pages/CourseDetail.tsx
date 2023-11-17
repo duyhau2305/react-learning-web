@@ -1,3 +1,5 @@
+import * as UserReducers from "../lib/redux/user/reducers";
+
 import { BsFillBarChartFill, BsHourglassSplit } from "react-icons/bs";
 import {
   FaBook,
@@ -16,6 +18,8 @@ import { IoAlarmOutline, IoTimeOutline } from "react-icons/io5";
 
 import { BiAbacus } from "react-icons/bi";
 import SocialMedia from "../components/SocialMedia";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { useState } from "react";
 
 const course = {
@@ -167,7 +171,10 @@ const categories = [
 ];
 
 export default function CourseDetail() {
+  const navigate = useNavigate();
+  const loginSuccess = useSelector(UserReducers.loginSuccess);
   const [expandedIndex, setExpandedIndex] = useState(0);
+  const [enrolled, setEnrolled] = useState(false);
 
   const handleClick = (nextIndex: any) => {
     if (expandedIndex === nextIndex) {
@@ -187,7 +194,7 @@ export default function CourseDetail() {
     }
     return stars;
   };
-  
+
   return (
     <div className="w-full">
       <div
@@ -207,7 +214,9 @@ export default function CourseDetail() {
                 {course.saleOff}% Off
               </div>
             </div>
-            <p className="text-2xl md:text-4xl font-bold text-black">{course.nameCourse}</p>
+            <p className="text-2xl md:text-4xl font-bold text-black">
+              {course.nameCourse}
+            </p>
             <p className="text-[18px] text-[#555]">{course.descrip}</p>
             <div className="flex gap-4">
               <div className="flex items-center gap-2">
@@ -312,7 +321,10 @@ export default function CourseDetail() {
               <div className="py-5 px-7 flex flex-col gap-5">
                 {course.listComments.map((c, i) => (
                   <div className="md:flex gap-5">
-                    <img src={c.authorAvatar} className="w-14 h-14 md:w-24 md:h-24"/>
+                    <img
+                      src={c.authorAvatar}
+                      className="w-14 h-14 md:w-24 md:h-24"
+                    />
                     <div className="flex-1">
                       <div className="md:flex items-center justify-between">
                         <div>
@@ -445,8 +457,13 @@ export default function CourseDetail() {
                       <FaRss className="text-white" />
                     </div>
                   </div>
-                  <button className="button bg-[#26c976] mt-5">
-                    Enrolled Now
+                  <button
+                    className="button bg-[#26c976] mt-5"
+                    onClick={() => {
+                      loginSuccess ? setEnrolled(true) : navigate("/login");
+                    }}
+                  >
+                    {enrolled ? "View" : "Enrolled Now"}
                   </button>
                 </div>
               </div>
@@ -459,7 +476,12 @@ export default function CourseDetail() {
               </div>
               <div className="p-3">
                 {categories.map((c: any, i: any) => (
-                  <div className={`flex px-3 py-4 justify-between items-center ${i%2!==0 && 'bg-[#f9f9f9]'}`} key={i}>
+                  <div
+                    className={`flex px-3 py-4 justify-between items-center ${
+                      i % 2 !== 0 && "bg-[#f9f9f9]"
+                    }`}
+                    key={i}
+                  >
                     <p className="text-lg">{c.nameCategory}</p>
                     <p className="text-lg">{c.amount}</p>
                   </div>
