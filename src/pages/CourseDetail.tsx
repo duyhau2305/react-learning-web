@@ -264,6 +264,7 @@ export default function CourseDetail() {
                 {course.content.map((c: any, i: any) => (
                   <div key={i}>
                     <button
+                    type="button"
                       className="w-full bg-[#26c976] p-4 flex justify-between"
                       onClick={() => handleClick(i)}
                     >
@@ -274,7 +275,7 @@ export default function CourseDetail() {
                         {c.lessons} lesson, {c.totalTime}
                       </span>
                     </button>
-                    <div className={expandedIndex === i ? "" : "hidden"}>
+                    <div className={`transition-all duration-200 origin-top ${expandedIndex === i ? " scale-y-100 h-auto visible" : "scale-y-0 h-0 invisible opacity-0"}`}>
                       {c.videos.map((vid: any, idx: any) => (
                         <div
                           className={`w-full p-4 flex justify-between items-center ${
