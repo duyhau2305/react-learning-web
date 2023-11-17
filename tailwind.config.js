@@ -32,7 +32,9 @@ export default {
   
         'lg': '1024px',
         // => @media (min-width: 1024px) { ... }
-  
+
+        'pxl': '1200px',
+        // => @media (min-width: 1200px) { ... }
         'xl': '1280px',
         // => @media (min-width: 1280px) { ... }
   

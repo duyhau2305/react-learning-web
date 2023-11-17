@@ -1,14 +1,16 @@
 import { AiFillPhone, AiOutlineUser } from "react-icons/ai";
-import { CiLocationOn } from "react-icons/ci";
 import { BsMessenger, BsSkype, BsTwitter, BsVimeo } from "react-icons/bs";
+import { useEffect, useState } from "react";
+
+import { CiLocationOn } from "react-icons/ci";
 import { GiRss } from "react-icons/gi";
+import { IoInformationOutline } from "react-icons/io5";
 import { IoIosPeople } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { menus } from "../configs/menu";
-import { useEffect, useState } from "react";
-import { IoInformationOutline } from "react-icons/io5";
 
 export default function Header() {
+  const isLogin = true;
   const [showMenu, setShowMenu] = useState(false);
   const [showTopMenu, setShowTopMenu] = useState(false);
   const handleScroll = () => {
@@ -150,7 +152,7 @@ export default function Header() {
                     );
                   })}
                 </ul>
-                <div className="wrapper-button-account flex items-center text-base">
+                {isLogin ? <Link to={"/profile"}><img src="/public/assets/image/ava-author.jpg"/></Link>:<div className="wrapper-button-account flex items-center text-base">
                   <button
                     className="login hidden md:flex gap-1 items-center uppercase rounded-tl-[2px] rounded-bl-[2px] text-primary p-[10px] md:p-3.75 bg-white"
                     type="button"
@@ -189,7 +191,8 @@ export default function Header() {
                       <IoInformationOutline className="text-white" />
                     </div>
                   </div>
-                </div>
+                </div>}
+                
               </nav>
             </div>
           </div>
