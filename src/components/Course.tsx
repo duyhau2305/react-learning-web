@@ -44,7 +44,8 @@ export default function Course({ item }: { item: any }) {
             <p className="font-medium text-base">{item.author}</p>
           </div>
           <div className="flex items-center gap-1">
-            <p className="font-medium text-base">Read More</p>
+            
+            <button className="font-medium text-base">Read More </button>
             <RiShareBoxFill className="primary-color" />
           </div>
         </div>

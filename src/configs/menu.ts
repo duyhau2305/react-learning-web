@@ -3,34 +3,7 @@ export const menus = [
     title: "Home",
     link: "/",
     subMenu: [
-      {
-        title: "Home One",
-        link: "",
-      },
-      {
-        title: "Home Two",
-        link: "",
-      },
-      {
-        title: "Home Three",
-        link: "",
-      },
-      {
-        title: "Home Four",
-        link: "",
-      },
-      {
-        title: "Home Five",
-        link: "",
-      },
-      {
-        title: "Home Six",
-        link: "",
-      },
-      {
-        title: "Home Seven",
-        link: "",
-      },
+      
     ],
   },
   {
@@ -55,34 +28,7 @@ export const menus = [
     title: "Blog",
     link: "/blog",
     subMenu: [
-      {
-        title: "Blog 1",
-        link: "",
-      },
-      {
-        title: "Blog 2",
-        link: "",
-      },
-      {
-        title: "Blog 3",
-        link: "",
-      },
-      {
-        title: "Blog 4",
-        link: "",
-      },
-      {
-        title: "Blog 5",
-        link: "",
-      },
-      {
-        title: "Blog 6",
-        link: "",
-      },
-      {
-        title: "Blog 7",
-        link: "",
-      },
+     
     ],
   },
   {
@@ -93,6 +39,11 @@ export const menus = [
   {
     title: "Forum",
     link: "/forum",
+    subMenu: []
+  },
+  {
+    title: "Dashboard",
+    link: "/Dashboard",
     subMenu: []
   }
 ];

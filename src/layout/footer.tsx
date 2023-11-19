@@ -43,8 +43,8 @@ export default function Footer() {
       <footer className="footer bg-[#1f1f33] relative">
         <div className="footer-shape">
           <img
-            src={"/assets/image/footer/logo.png"}
-            className="absolute -left-[60px]"
+            src={"/assets/image/logo.png"}
+            className="absolute left-[100px] mt-14 w-40"
           />
           <img
             src={"/assets/image/footer/04.png"}
@@ -100,11 +100,11 @@ export default function Footer() {
         <p className="text-lg">
           © 2023{" "}
           <Link to="/" className="text-black text-lg font-bold">
-            Edukon
+            H-Blended
           </Link>{" "}
           Designed by{" "}
           <Link
-            to="https://themeforest.net/user/CodexCoder"
+            to="https://github.com/duyhau2305"
             target="_blank"
             className="text-black text-lg font-bold"
           >

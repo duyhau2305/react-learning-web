@@ -59,11 +59,11 @@ export default function Header() {
                 to="tel:0919538433"
               >
                 <AiFillPhone size={16} />
-                <span className="ml-[5px]">0919538433</span>
+                <span className="ml-[5px]">0818123593</span>
               </Link>
               <span className="tbl-phone flex-grow flex items-center justify-center px-[15px] py-[15px] plg:py-[15px] plg:px-[25px]">
                 <CiLocationOn size={16} />
-                <span className="ml-[5px]">HUST - Hanoi, Vietnam</span>
+                <a href="https://maps.app.goo.gl/cGfhjeEvjTP9NwUw6" className="ml-[5px]">HUST - Hanoi, Vietnam</a>
               </span>
             </div>
             <div className="tab-header-top-right flex items-center justify-center w-full sm:max-w-[540px] md:max-w-[720px] ">
@@ -72,31 +72,31 @@ export default function Header() {
                 <div className="flex items-center text-white plg:text-primary ">
                   <Link
                     className="w-[50px] h-[50px] flex items-center justify-center"
-                    to="https://fb.com/vuonghaodu"
+                    to="https://www.facebook.com/choidong.ki.9/"
                   >
                     <BsMessenger size={16} />
                   </Link>
                   <Link
                     className="w-[50px] h-[50px] flex items-center justify-center ml-[5px] border-l border-l-mobile plg:border-l-primary"
-                    to="https://x.com/vuonghaodu"
+                    to="https://www.facebook.com/dhbkhanoi"
                   >
                     <BsTwitter size={16} />
                   </Link>
                   <Link
                     className="w-[50px] h-[50px] flex items-center justify-center ml-[5px] border-l border-l-mobile plg:border-l-primary"
-                    to="https://fb.com/vuonghaodu"
+                    to="https://www.facebook.com/dhbkhanoi"
                   >
                     <BsVimeo size={16} />
                   </Link>
                   <Link
                     className="w-[50px] h-[50px] flex items-center justify-center ml-[5px] border-l border-l-mobile plg:border-l-primary"
-                    to="https://fb.com/vuonghaodu"
+                    to="https://www.facebook.com/dhbkhanoi"
                   >
                     <BsSkype size={16} />
                   </Link>
                   <Link
                     className="w-[50px] h-[50px] flex items-center justify-center ml-[5px] border-l border-l-mobile plg:border-l-primary"
-                    to="https://fb.com/vuonghaodu"
+                    to="https://www.facebook.com/ctsv.hust.edu.vn"
                   >
                     <GiRss size={16} />
                   </Link>
@@ -109,7 +109,7 @@ export default function Header() {
           <div className="bottom-header-container realtive px-6.25  flex items-center justify-center backdrop-blur-[20px] bg-blur">
             <div className="relative flex items-center justify-between py-5 w-full sm:max-w-[540px] md:max-w-[720px] plg:max-w-full">
               <div className="logo-left max-h-[52px]">
-                <Link className="inline-block w-full h-full" to="/">
+                <Link className="inline-block w-60 " to="/">
                   <img src="/assets/image/logo.png" alt="logo" />
                 </Link>
               </div>

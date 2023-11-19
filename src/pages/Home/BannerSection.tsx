@@ -8,14 +8,14 @@ export default function BannerSection() {
         <div className="data-left w-full max-w-[800px] xl:max-w-[526px]">
           <div className="data-content">
             <h6 className="subtitle text-uppercase font-semibold text-primary">
-              Online education
+             Blended-learning education
             </h6>
             <h2 className="title text-black font-bold">
               <span className="block">Learn The</span> Skills You Need{" "}
               <span className="block">To Succeed</span>
             </h2>
             <p className="desc mb-[25px] text-xl text-grey">
-              Free online courses from the world’s Leading experts. join 18+
+              Free online courses and Blended-learning from the world’s Leading experts. join 18+
               million Learners today.
             </p>
             <form action="/" className="relative">
